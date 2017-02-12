@@ -1,0 +1,199 @@
+/* You can add global styles to this file, and also import other style files */
+#table1 {
+
+}
+
+thead {
+    background: #808080;
+    color: #fff;
+}
+
+td {
+    width: 10em;
+    padding: 0.3em;
+}
+
+tbody {
+    background: #efefef;
+}
+
+div.pager {
+    text-align: center;
+    margin: 1em 0;
+}
+
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #fff;
+    color: #222121;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: #808080;
+    color: #fff;
+}
+
+.reg-and-log-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown a:hover {
+    background-color: darkgray !important;
+}
+
+.rolesInTable {
+    display: flex;
+}
+
+.justify {
+    display: flex;
+    justify-content:flex-start;
+}
+
+.justify-between {
+    display: flex;
+    justify-content:space-between;
+}
+
+
+/*LOADER*/
+.loader-self {
+  /*border: 16px solid grey;*/
+  /*border-radius: 50%;*/
+  /*border-top: 16px solid grey;
+  border-bottom: 16px solid grey;*/
+  /*width: 60px;
+  height: 60px;*/
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+
+  /*margin: 0 10px;*/
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.user_number {
+    padding: 10px 10px 0 5px;
+    margin-right: 20px;
+    border-right: 1px solid #DDDDDD;
+}
+
+.user_is_admin {
+    background-color: darksalmon;
+}
+
+.user_is_user {
+    background-color: #0094ff;
+}
+
+.user_name {
+    color: #fff;
+}
+
+.user_link {
+    float:right;
+    margin: 5px;
+}
+
+/*BOOTSTRAP*/
+.btn {
+    margin: 5px;
+}
+
+.form-control {
+    margin: 5px;
+}
+
+.btn.user_settings {
+    font-size: 16px;
+    padding-bottom: 2px;
+}
+
+/*TILT*/
+.parent_tilt {
+    transform-style: preserve-3d;
+    width: 250px;
+    height: 54px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.child_tilt {
+    transform: translateZ(20px);
+}
+
+/*NOTIFY.JS*/
+/*
+ * container for positioning
+ */
+.notify {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 350px;
+}
+
+/* Positions
+========================================================================== */
+.notify-top-right,
+.notify-bottom-right {
+  left: auto;
+  right: 10px;
+}
+.notify-top-center,
+.notify-bottom-center {
+  left: 50%;
+  margin-left: -175px;
+}
+.notify-bottom-left,
+.notify-bottom-right,
+.notify-bottom-center {
+  top: auto;
+  bottom: 10px;
+}
+
+/* Responsiveness
+========================================================================== */
+/* Phones portrait and smaller */
+@media (max-width: 479px) {
+  /*
+     * Fit in small screen
+     */
+  .notify {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    margin: 0;
+  }
+}
+
+/* Sub-object: `notify-message`
+========================================================================== */
+.notify-message {
+  position: relative;
+  cursor: pointer;
+}
+
+.notify .alert-default {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+/*---------------------------------------------------------------------*/
+

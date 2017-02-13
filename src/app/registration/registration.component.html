@@ -1,3 +1,29 @@
-<p>
-  registration works!
-</p>
+<h3>Registration</h3>
+<div>
+    <form class="form-horizontal" method="post" role="form">
+        <hr>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Email">Email</label>
+            <div class="col-md-10">
+                <input [(ngModel)]="model.email" class="form-control" data-val="true" data-val-email="Поле Email не содержит допустимый адрес электронной почты." data-val-required="Требуется поле Email." id="Email" name="Email" type="text" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Password">Password</label>
+            <div class="col-md-10">
+                <input [(ngModel)]="model.password" class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="Требуется поле Password." id="Password" name="Password" type="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="ConfirmPassword">Confirm password</label>
+            <div class="col-md-10">
+                <input [(ngModel)]="model.confirmPassword" class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" type="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input (click)="Registration()" type="submit" class="btn btn-default" value="Register">
+            </div>
+        </div>
+    </form>
+</div>

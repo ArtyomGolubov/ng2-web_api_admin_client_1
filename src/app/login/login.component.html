@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+<h3>Log in</h3>
+<div>
+    <form class="form-horizontal" method="post" role="form">
+        <hr>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Email">Email</label>
+            <div class="col-md-10">
+                <input [(ngModel)]="model.userName" class="form-control" data-val="true" data-val-email="Поле Email не содержит допустимый адрес электронной почты." data-val-required="Требуется поле Email." id="Email" name="Email" type="text" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Password">Password</label>
+            <div class="col-md-10">
+                <input [(ngModel)]="model.password" class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="Требуется поле Password." id="Password" name="Password" type="password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="justify">
+                    <input (click)="Login()" type="submit" class="btn btn-default" value="Login">
+                    <div class="loader-sm"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

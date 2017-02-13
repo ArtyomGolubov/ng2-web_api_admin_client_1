@@ -10,6 +10,9 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UsersListComponent } from './users-list/users-list.component';
 
+import { HttpService } from './http.service';
+import { AccountService } from './account.service';
+
 const APP_ROUTES: Routes = [
     {path: 'users', component: UsersListComponent },
     {path: 'registration', component: RegistrationComponent },
@@ -31,7 +34,7 @@ const APP_ROUTES: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HttpService, AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -29,11 +29,11 @@
   </div>
 </div>
 <div class="container body-content">
-  <div class="container body-content">
-    <div class="raw">
-      <div class="col-md-5">
-      <router-outlet></router-outlet>
-      </div>
+  <div class="container-fluid body-content">
+    <div class="row">
+        <app-alert [alerts]="alerts"></app-alert>
+        <router-outlet></router-outlet>
+
     </div>
   </div>
   <hr />

@@ -21,12 +21,7 @@ export class RegistrationComponent implements OnInit {
 
   Registration() {
     this.accountService.Register(this.model).subscribe(
-      data => {
-
-      },
-      error => {
-
-      }
+      data => data
     );
   }
 

@@ -59,7 +59,7 @@ export class AccountService {
         //console.log(res.json());
         let data = res.json();
 
-        this.httpService.setResponseStatusInfo({status: res.status, description: res.statusText});
+        this.httpService.setResponseStatusInfo({status: res.status, description: res.statusText, type: 'success'});
         this.setUserName(data.userName);
         this.setToken(data.access_token);
 
@@ -69,7 +69,7 @@ export class AccountService {
     .catch((error: any)=> {
       //console.log(error.json());
 
-      this.httpService.setResponseStatusInfo({status: error.status, description: error.json().error_description});
+      this.httpService.setResponseStatusInfo({status: error.status, description: error.json().error_description, type: 'danger'});
       return Observable.throw(error.json().error_description);
     });
   }
@@ -80,33 +80,54 @@ export class AccountService {
       (res) => {
         let data = res.json();
 
-        this.httpService.setResponseStatusInfo({status: res.status, description: res.statusText});
-
+        this.httpService.setResponseStatusInfo({status: res.status, description: res.statusText, type: 'success'});
+        console.info('Register succes');
         return data;
       }
     )
     .catch((error: any)=> {
       //console.log(error.json().ModelState[""][1]);
-      this.httpService.setResponseStatusInfo({status: error.status, description: error.json().ModelState[""][1] || error.statusText});
+      this.httpService.setResponseStatusInfo({status: error.status, description: error.statusText, type: 'danger'});
+      console.info('Register error');
       return Observable.throw(error.statusText);
     });
   }
 
   ChangePassword (p: ChangePasswordViewModel) {
-    let headers = new Headers({ 'Authorization': 'Bearer ' + this.getToken() }); 
+    let headers = new Headers({ 'Authorization': 'Bearer ' + this.getToken() ,
+     'Content-Type': 'application/json;charset=utf-8' });
     return this.http.post(this.httpService.apiUrl + 'api/Account/ChangePassword', p, { headers: headers }).map(
       (res) => {
 
-        this.httpService.setResponseStatusInfo({status: res.status, description: res.statusText});
+        this.httpService.setResponseStatusInfo({status: res.status, description: res.statusText, type: 'success'});
         let data = res.json();
-
+        console.info('ChangePassword succes');
         return data;
       }
     )
     .catch((error: any)=> {
-      this.httpService.setResponseStatusInfo({status: error.status, description: error.statusText});
+      this.httpService.setResponseStatusInfo({status: error.status, description: error.statusText, type: 'danger'});
+      console.info('ChangePassword error');
       return Observable.throw(error.statusText);
     });
   }
+
+  // ChangePassword (p: ChangePasswordViewModel) {
+  //   let headers = new Headers([{ 'Authorization': 'Bearer ' + this.getToken() },
+  //   { 'Content-Type': 'application/json;charset=utf-8' }]); 
+  //   return this.http.post(this.httpService.apiUrl + 'api/Account/ChangePassword', p, { headers: headers }).subscribe(
+  //     (res) => {
+
+  //       this.httpService.setResponseStatusInfo({status: res.status, description: res.statusText, type: 'success'});
+  //       let data = res.json();
+  //       console.info('ChangePassword succes');
+  //       return data;
+  //     },
+  //   (error) => {
+  //     this.httpService.setResponseStatusInfo({status: error.status, description: error.statusText, type: 'danger'});
+  //     console.info('ChangePassword error');
+  //     return Observable.throw(error.statusText);
+  //   });
+  // }
 
 }

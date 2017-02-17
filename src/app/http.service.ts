@@ -22,6 +22,7 @@ export class HttpService {
   setResponseStatusInfo(responseStatusInfo: ResponseStatusInfo) {
     this.responseStatusInfo.status = responseStatusInfo.status;
     this.responseStatusInfo.description = responseStatusInfo.description;
+    this.responseStatusInfo.type = responseStatusInfo.type;
     this.responseStatusInfoUpdated.emit(this.responseStatusInfo); // вызываем событие
   }
 

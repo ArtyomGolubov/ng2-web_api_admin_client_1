@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { AccountService } from './account.service';
-import { HttpService } from './http.service'
+import { HttpService } from './http.service';
+import { AlertComponent } from './alert/alert.component';
+
+import { Alert, Alerts} from './alert/alert.component'
 
 @Component({
   selector: 'app-root',
@@ -11,6 +14,7 @@ export class AppComponent {
   title = 'app works!';
   isLogin = true;
   name = 'user';
+  alerts: Alerts = new Alerts();
 
   constructor(private accountService: AccountService, private httpService: HttpService) { }
 
@@ -36,6 +40,9 @@ export class AppComponent {
     this.httpService.responseStatusInfoUpdated.subscribe(
       (responseStatisInfo) => {
         console.log('responseStatisInfo = ', responseStatisInfo);
+        this.alerts.addAlert({text: responseStatisInfo.description + ' status: ' 
+        + responseStatisInfo.status + ' index: ' 
+        + this.alerts.addAlert.length.toString(), class: responseStatisInfo.type, id: this.alerts.addAlert.length});
       }
     );
 

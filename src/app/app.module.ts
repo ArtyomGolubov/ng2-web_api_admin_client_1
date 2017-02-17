@@ -12,6 +12,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 
 import { HttpService } from './http.service';
 import { AccountService } from './account.service';
+import { AlertComponent } from './alert/alert.component';
 
 const APP_ROUTES: Routes = [
     {path: 'users', component: UsersListComponent },
@@ -26,7 +27,8 @@ const APP_ROUTES: Routes = [
     RegistrationComponent,
     LoginComponent,
     ChangePasswordComponent,
-    UsersListComponent
+    UsersListComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

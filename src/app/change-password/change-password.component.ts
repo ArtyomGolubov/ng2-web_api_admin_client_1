@@ -22,8 +22,7 @@ export class ChangePasswordComponent implements OnInit {
   ChangePassword() {
     console.log('model = ', this.model)
     this.accountService.ChangePassword(this.model).subscribe(
-      data => data,
-      error => error
+      data => data
     );
   }
 

@@ -1,0 +1,9 @@
+<ul>
+    <li [id]="alert.id"
+    class="alert" 
+    *ngFor="let alert of alerts.alertsArr" 
+    [ngClass]="'alert-' + alert.class"
+    (click)="close($event.srcElement)">
+    {{alert.text}}
+    </li>
+</ul>

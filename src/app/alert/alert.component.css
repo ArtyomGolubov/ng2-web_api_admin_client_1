@@ -1,0 +1,13 @@
+ul {
+    position: fixed;
+    top: 55px;
+    right: 0;
+    list-style-type: none;
+    z-index: 1000;
+}
+
+li {
+    margin: 3px;
+    transition: all 1s;
+    left: 0px;
+}
